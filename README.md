@@ -105,7 +105,6 @@ The website is fully responsive and tested on:
 - [GitHub](https://github.com/Muhammadabid7)
 - [Instagram](https://www.instagram.com/bidzz_ajagin/)
 - [Telegram](https://t.me/bidzz7)
-- [WhatsApp](https://wa.me/6282350265164)
 
 ## 📜 License
 
