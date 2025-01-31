@@ -1,46 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">    <audio controls autoplay hidden>
-        <source src="https://thohirdev.com/upload/bird.mp3" type="audio/mpeg">
-    </audio>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bidzz Official - Software Developer, Reverse Engineer, and Tech Enthusiast">
+    <meta name="keywords" content="BIDZZ, developer, ethical hacking, reverse engineering, web designer">
+    <meta name="author" content="BIDZZ">
+    <meta name="theme-color" content="#3498db">
+    <meta property="og:title" content="Bidzz Official">
+    <meta property="og:description" content="Software Developer, Reverse Engineer, and Tech Enthusiast">
+    <meta property="og:image" content="Bidzz.png">
+    <meta property="og:url" content="https://bidzz-rawr.github.io/ABOUT-ME">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="Bidzz.png" type="image/x-icon">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="Anime.png" type="image/x-icon">
-    <title>ABOUT BIDZZ OFFICIAL</title>
+    
+    <!-- Required Libraries -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js" defer></script>
+    
+    <title>ABOUT Bidzz Official</title>
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">BIDZZ OFFICIAL</a>
+    <!-- Preloader -->
+    <div class="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop autoplay preload="auto">
+        <source src="galau.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <!-- Sound Toggle Button -->
+    <button id="soundToggle" class="sound-toggle" aria-label="Toggle Sound">
+        <i class="fas fa-volume-up"></i>
+    </button>
+
+    <!-- Header Section -->
+    <header id="header">
+        <a href="#" class="logo">Bidzz Official</a>
         
-        <nav>
-            <a href="#" class="active"> Home</a>
-            <a href="https://t.me/reqcrackbybidzz" >Crack Request</a>
-            <a href="https://t.me/cheatbybidzz" >Channel</a>
-            <a href="https://youtube.com/@BidzzOFC" >Education</a>
-            <a href="https://open.spotify.com/playlist/3MnO75FZNxJGNAQRt3lExM?si=TvCz0E8lT2yhE6YCQqtlBw" >My Playlist</a>
-            <a href="https://t.me/bidzz7" >Contact</a>
+        <button class="nav-toggle" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="primary-navigation">
+            <a href="#" class="active">Home</a>
+            <a href="https://muhammadabid7.github.io/payment" target="_blank" rel="noopener">Payment</a>
+            <a href="https://t.me/cheatbybidzz" target="_blank" rel="noopener">Channel</a>
+            <a href="https://youtube.com/@BidzzOFC" target="_blank" rel="noopener">Education</a>
+            <a href="https://open.spotify.com/playlist/3MnO75FZNxJGNAQRt3lExM?si=TvCz0E8lT2yhE6YCQqtlBw" target="_blank" rel="noopener">My Playlist</a>
+            <a href="https://t.me/bidzz7" target="_blank" rel="noopener">Contact</a>
         </nav>
     </header>
-    <section class="home">
-        <div class="home-img">
-            <img src="Anime.png" alt="">
-        </div>
-        <div class="home-content">
-            <h1>Hi, I'm<span> Bidzz</span></h1>
-            <h2 class="typing-text">I'm a <span></span></h2>
-            <p>I am an ordinary person who likes things related to technology and happens to be lucky to have a little experience about technology and others. Even though I only learned using autodidactic methods because of a reason that required me to do so :).</p>
-            <div class="social-icons">
-                <a href="https://youtube.com/@BidzzOFC"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://github.com/Muhammadabid7"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.instagram.com/bidzz_ajagin/"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://t.me/bidzz7/"><i class="fa-brands fa-telegram"></i></a>
-                <a href="https://wa.me/6282350265164?text=Assalamualaikum+Bidzz"><i class="fa-brands fa-whatsapp"></i></a>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="home">
+            <div class="home-container">
+                <div class="profile-section">
+                    <!-- Profile Image -->
+                    <div class="home-img" data-tilt data-tilt-max="20">
+                        <img src="Bidzz.png" alt="BIDZZ Profile Picture" loading="lazy">
+                    </div>
+                    
+                    <!-- Profile Content -->
+                    <div class="home-content">
+                        <h1>Hi, I'm <span class="highlight">Bidzz</span></h1>
+                        <div class="typing-container">
+                            <h2>I'm a <span class="typing"></span></h2>
+                        </div>
+                        
+                        <p class="bio">
+                            I am an ordinary person who likes things related to technology and happens to be lucky 
+                            to have a little experience about technology and others. Even though I only learned 
+                            using autodidactic methods because of a reason that required me to do so :)
+                        </p>
+                        
+                        <!-- Social Media Links -->
+                        <div class="social-icons">
+                            <a href="https://youtube.com/@BidzzOFC" target="_blank" rel="noopener" aria-label="YouTube" class="social-link youtube">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                            <a href="https://github.com/Muhammadabid7" target="_blank" rel="noopener" aria-label="GitHub" class="social-link github">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.instagram.com/bidzz_ajagin/" target="_blank" rel="noopener" aria-label="Instagram" class="social-link instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://t.me/bidzz7/" target="_blank" rel="noopener" aria-label="Telegram" class="social-link telegram">
+                                <i class="fa-brands fa-telegram"></i>
+                            </a>
+                            <a href="https://wa.me/6282350265164?text=Assalamualaikum+Bidzz" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-link whatsapp">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Call to Action Button -->
+                        <a href="assets/index.html" class="btn" target="_blank" rel="noopener">
+                            See More
+                        </a>
+                    </div>
+                </div>
             </div>
-            <a href=" https://telegra.ph/ABOUT-ME-08-22-25" class="btn">See More</a>
+        </section>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Scripts -->
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Vanilla Tilt -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+
+    <!-- Particles Config -->
+    <script>
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('particles.js loaded');
+        });
+    </script>
+
+    <!-- Initialize Tilt -->
+    <script>
+        VanillaTilt.init(document.querySelector(".home-img"), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.5,
+        });
+    </script>
+
+    <!-- No Script Fallback -->
+    <noscript>
+        <div class="noscript-message">
+            Please enable JavaScript to view this website properly.
         </div>
-    </section>
+    </noscript>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "BIDZZ",
+        "url": "https://bidzz-rawr.github.io/ABOUT-ME",
+        "sameAs": [
+            "https://youtube.com/@BidzzOFC",
+            "https://github.com/Muhammadabid7",
+            "https://www.instagram.com/bidzz_ajagin/",
+            "https://t.me/bidzz7/"
+        ],
+        "jobTitle": "Software Developer",
+        "description": "Software Developer, Reverse Engineer, and Tech Enthusiast"
+    }
+    </script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(registration => {
+                    console.log('ServiceWorker registration successful');
+                }).catch(err => {
+                    console.log('ServiceWorker registration failed', err);
+                });
+            });
+        }
+    </script>
 </body>
 </html>
