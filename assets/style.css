@@ -1,0 +1,510 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+/* Root Variables */
+:root {
+    --primary-color: #0a192f;
+    --secondary-color: #64ffda;
+    --text-color: #8892b0;
+    --card-bg: rgba(17, 34, 64, 0.8);
+    --hover-color: #64ffda;
+    --cyber-blue: #00fff9;
+    --cyber-pink: #ff00c1;
+    --cyber-glow: 0 0 10px rgba(100, 255, 218, 0.3);
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+body {
+    background: var(--primary-color);
+    color: var(--text-color);
+    font-family: 'Rajdhani', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Preloader */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-circle {
+    width: 80px;
+    height: 80px;
+    border: 4px solid var(--secondary-color);
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    animation: spin 1s linear infinite;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 4px;
+    background: rgba(100, 255, 218, 0.2);
+    border-radius: 2px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    width: 0;
+    height: 100%;
+    background: var(--secondary-color);
+    transition: width 0.3s ease-out;
+    position: relative;
+}
+
+.progress-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: loading-shine 1.5s infinite;
+}
+
+.progress-text {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    text-shadow: var(--cyber-glow);
+}
+
+/* Custom Cursor */
+.cursor {
+    width: 10px;
+    height: 10px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 999;
+    transition: transform 0.2s ease;
+}
+
+.cursor-follower {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 998;
+    transition: transform 0.15s ease;
+}
+
+/* Particles Container */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Main Container */
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header Styles */
+.cyber-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.profile-image-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem;
+    position: relative;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--secondary-color);
+    box-shadow: var(--cyber-glow);
+    transition: transform 0.3s ease;
+}
+
+.cyber-circle {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50%;
+    animation: rotate 10s linear infinite;
+}
+
+.cyber-circle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    box-shadow: var(--cyber-glow);
+}
+
+/* Title Styles */
+.cyber-glitch {
+    color: var(--secondary-color);
+    font-size: 4rem;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: var(--cyber-glow);
+    margin: 2rem 0;
+}
+
+.cyber-glitch::before,
+.cyber-glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+.cyber-glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--cyber-pink);
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
+
+.cyber-glitch::after {
+    left: -2px;
+    text-shadow: 2px 0 var(--cyber-blue);
+    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+}
+
+/* Card Styles */
+.cyber-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(100, 255, 218, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.cyber-card:hover::before {
+    transform: translateX(100%);
+}
+
+.cyber-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary-color);
+    box-shadow: 0 10px 30px rgba(100, 255, 218, 0.2);
+}
+
+/* Info Grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-item {
+    position: relative;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.info-label {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.info-value {
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+/* Games Grid */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.game-card {
+    background: rgba(17, 34, 64, 0.9);
+    border: 2px solid rgba(100, 255, 218, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+.game-image-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.3);
+}
+
+.game-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 0;
+    transition: transform 0.3s ease;
+}
+
+.cyber-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(100, 255, 218, 0.1), rgba(0, 0, 0, 0.2));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 50%;
+}
+
+.game-card:hover .cyber-overlay {
+    opacity: 1;
+}
+
+.game-card:hover .game-logo {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.game-info {
+    padding: 1rem;
+    background: transparent;
+}
+
+.game-info h3 {
+    color: var(--secondary-color);
+    margin: 0;
+    font-size: 1.2rem;
+    text-shadow: var(--cyber-glow);
+}
+
+.cyber-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    background: rgba(100, 255, 218, 0.1);
+    border: 1px solid rgba(100, 255, 218, 0.3);
+    border-radius: 4px;
+    color: var(--secondary-color);
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(100, 255, 218, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(100, 255, 218, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(100, 255, 218, 0);
+    }
+}
+
+.game-image-container:hover {
+    animation: pulse 1.5s infinite;
+}
+
+/* Skills Section */
+.skills-list {
+    list-style: none;
+}
+
+.skill-item {
+    margin-bottom: 2rem;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.skill-name {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+.skill-percentage {
+    color: var(--text-color);
+}
+
+.skill-bar {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-progress {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary-color), var(--cyber-blue));
+    border-radius: 5px;
+    position: relative;
+    transition: width 1.5s ease-in-out;
+}
+
+.progress-glow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--secondary-color);
+    filter: blur(3px);
+    animation: glowPulse 2s infinite;
+}
+
+/* Sound Control */
+.sound-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.cyber-button {
+    background: none;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-button:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes loading-shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes glowPulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+@keyframes rotate {
+    to { transform: rotate(360deg); }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .cyber-glitch {
+        font-size: 2.5rem;
+    }
+
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .game-image-container {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-image-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .cyber-card {
+        padding: 1rem;
+    }
+}
