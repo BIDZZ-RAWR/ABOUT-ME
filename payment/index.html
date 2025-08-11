@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment | Bidzz Official</title>
+    <meta name="description" content="Premium Payment Gateway for secure transactions - Bidzz Official">
+    <meta name="keywords" content="payment gateway, DANA, GoPay, PayPal, Bitcoin, secure payments">
+    <meta name="author" content="Bidzz Official">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+        <i class="fas fa-moon"></i>
+    </button>
+    <div class="container">
+        <div class="header">
+            <h1>Payment | Bidzz Official</h1>
+        </div>
+        <div class="warning">
+            <i class="fas fa-suitcase-rolling"></i>
+            ALL TRANSACTIONS ARE NON-REFUNDABLE
+            <i class="fas fa-suitcase-rolling"></i>
+        </div>
+        <div class="payment-grid">
+            <div class="payment-method" data-method="dana">
+                <div class="payment-header">
+                    <div class="payment-logo">
+                        <img src="dana.png" alt="Dana" loading="lazy">
+                    </div>
+                    <div class="payment-info">
+                        <h3>DANA</h3>
+                    </div>
+                </div>
+                <div class="payment-details">
+                    <p>0851-8377-2422</p>
+                    <p>A/N Muhammad Abid</p>
+                </div>
+                <div class="status-badge ready">
+                    <i class="fas fa-check-circle"></i> READY
+                </div>
+                <button class="copy-btn" data-number="085183772422">
+                    <i class="far fa-copy"></i> Copy Number
+                </button>
+            </div>
+            <div class="payment-method" data-method="gopay">
+                <div class="payment-header">
+                    <div class="payment-logo">
+                        <img src="gopay.png" alt="GoPay" loading="lazy">
+                    </div>
+                    <div class="payment-info">
+                        <h3>GOPAY</h3>
+                    </div>
+                </div>
+                <div class="payment-details">
+                    <p>0823-5026-5164</p>
+                    <p>A/N Bidzz Official</p>
+                </div>
+                <div class="status-badge not-ready">
+                    <i class="fas fa-times-circle"></i> NOT READY
+                </div>
+                <button class="copy-btn" data-number="082350265164">
+                    <i class="far fa-copy"></i> Copy Number
+                </button>
+            </div>
+            <div class="payment-method" data-method="paypal">
+                <div class="payment-header">
+                    <div class="payment-logo">
+                        <img src="paypal.png" alt="PayPal" loading="lazy">
+                    </div>
+                    <div class="payment-info">
+                        <h3>PayPal</h3>
+                    </div>
+                </div>
+                <div class="payment-details">
+                    <p>MuhammadAbid503</p>
+                </div>
+                <div class="status-badge not-ready">
+                    <i class="fas fa-times-circle"></i> NOT READY
+                </div>
+                <button class="copy-btn" data-number="https://www.paypal.me/MuhammadAbid503">
+                    <i class="far fa-copy"></i> Copy Link
+                </button>
+            </div>
+            <div class="payment-method" data-method="bitcoin">
+                <div class="payment-header">
+                    <div class="payment-logo">
+                        <img src="bitcoin.png" alt="Bitcoin" loading="lazy">
+                    </div>
+                    <div class="payment-info">
+                        <h3>Bitcoin</h3>
+                    </div>
+                </div>
+                <div class="payment-details">
+                    <p>bc1ql4ngnutpdpvvdpf5tvrjl0tc06q5v3flrh833r</p>
+                </div>
+                <div class="status-badge ready">
+                    <i class="fas fa-check-circle"></i> READY
+                </div>
+                <button class="copy-btn" data-number="bc1ql4ngnutpdpvvdpf5tvrjl0tc06q5v3flrh833r">
+                    <i class="far fa-copy"></i> Copy Address
+                </button>
+            </div>
+        </div>
+        <div class="contact-section">
+            <h2 class="contact-title">Need Help?</h2>
+            <a href="https://t.me/bidzz7" class="contact-button" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-telegram-plane"></i>
+                Contact Support
+            </a>
+            <button id="music-toggle" class="contact-button">
+                <i class="fas fa-volume-up"></i> Toggle Music
+            </button>
+        </div>
+    </div>
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span>Number copied successfully!</span>
+    </div>
+    <audio id="background-music" autoplay loop>
+        <source src="bidzz.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script src="script.js"></script>
+</body>
+</html>

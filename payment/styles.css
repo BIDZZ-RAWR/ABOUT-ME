@@ -1,0 +1,453 @@
+/* Root Variables */
+:root {
+    /* Light Theme */
+    --background-light: #e0e5ec;
+    --card-bg-light: #e0e5ec;
+    --text-primary-light: #2a2e35;
+    --text-secondary-light: #5a5f66;
+    --accent-color-light: #4a90e2;
+    --shadow-light-light: #ffffff;
+    --shadow-dark-light: #a3b1c6;
+
+    /* Dark Theme */
+    --background-dark: #2e2e2e;
+    --card-bg-dark: #2e2e2e;
+    --text-primary-dark: #e0e5ec;
+    --text-secondary-dark: #a0a0a0;
+    --accent-color-dark: #6ab0ff;
+    --shadow-light-dark: #3a3a3a;
+    --shadow-dark-dark: #1a1a1a;
+
+    /* Default to Light Theme */
+    --background: var(--background-light);
+    --card-bg: var(--card-bg-light);
+    --text-primary: var(--text-primary-light);
+    --text-secondary: var(--text-secondary-light);
+    --accent-color: var(--accent-color-light);
+    --shadow-light: var(--shadow-light-light);
+    --shadow-dark: var(--shadow-dark-light);
+
+    /* Gradients */
+    --neumorphic-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
+    --neumorphic-shadow-inset: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light);
+    --accent-gradient: linear-gradient(135deg, var(--accent-color), #357abd);
+
+    /* Payment Method Colors */
+    --gopay-gradient: linear-gradient(135deg, #1D976C, #93F9B9);
+    --dana-gradient: linear-gradient(135deg, #0082c8, #667db6);
+    --bitcoin-gradient: linear-gradient(135deg, #f2994a, #f2c94c);
+    --paypal-gradient: linear-gradient(135deg, #2193b0, #6dd5ed);
+
+    /* Transitions */
+    --transition: all 0.3s ease;
+}
+
+/* Theme-Specific Variables */
+[data-theme="dark"] {
+    --background: var(--background-dark);
+    --card-bg: var(--card-bg-dark);
+    --text-primary: var(--text-primary-dark);
+    --text-secondary: var(--text-secondary-dark);
+    --accent-color: var(--accent-color-dark);
+    --shadow-light: var(--shadow-light-dark);
+    --shadow-dark: var(--shadow-dark-dark);
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: var(--transition);
+}
+
+/* Body and Container */
+body {
+    min-height: 100vh;
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100vw;
+    max-width: 1200px;
+    min-height: 100vh;
+    background: var(--background);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: var(--background);
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--neumorphic-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    box-shadow: var(--neumorphic-shadow-inset);
+    transform: translateY(1px);
+}
+
+.theme-toggle i {
+    font-size: 1.2em;
+    color: var(--accent-color);
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    padding: 20px 0;
+    background: var(--background);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: var(--neumorphic-shadow);
+    border-radius: 15px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+}
+
+/* Warning Banner */
+.warning {
+    background: var(--background);
+    padding: 15px;
+    font-weight: 500;
+    text-align: center;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: var(--neumorphic-shadow);
+    border-radius: 15px;
+    color: #e63946;
+    text-transform: uppercase;
+    margin: 20px 0;
+    transition: var(--transition);
+}
+
+.warning:hover {
+    transform: translateY(-2px);
+}
+
+/* Payment Grid */
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* Payment Method Cards */
+.payment-method {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 20px;
+    transition: var(--transition);
+    box-shadow: var(--neumorphic-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.payment-method:hover {
+    transform: translateY(-5px);
+    box-shadow: 10px 10px 20px var(--shadow-dark), -10px -10px 20px var(--shadow-light);
+}
+
+/* Payment Header */
+.payment-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.payment-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    background: var(--background);
+    box-shadow: var(--neumorphic-shadow-inset);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-logo img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.payment-info h3 {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Payment Details */
+.payment-details p {
+    color: var(--text-secondary);
+    font-size: 1.1em;
+    margin: 8px 0;
+    font-weight: 400;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-size: 0.9em;
+    font-weight: 500;
+    margin: 10px 0;
+    text-transform: uppercase;
+    transition: var(--transition);
+    box-shadow: var(--neumorphic-shadow);
+}
+
+.ready {
+    background: var(--background);
+    color: #2ecc71;
+}
+
+.not-ready {
+    background: var(--background);
+    color: #e63946;
+}
+
+/* Copy Button */
+.copy-btn {
+    width: 100%;
+    background: var(--background);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    color: var(--accent-color);
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.95em;
+    transition: var(--transition);
+    box-shadow: var(--neumorphic-shadow);
+    text-transform: uppercase;
+}
+
+.copy-btn:hover {
+    box-shadow: var(--neumorphic-shadow-inset);
+    transform: translateY(1px);
+}
+
+/* Contact Section */
+.contact-section {
+    text-align: center;
+    padding: 20px;
+    background: var(--background);
+    border-radius: 15px;
+    box-shadow: var(--neumorphic-shadow);
+    margin-top: 20px;
+    transition: var(--transition);
+}
+
+.contact-title {
+    font-size: 1.6em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.contact-button, #music-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--background);
+    padding: 12px 25px;
+    border-radius: 25px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1em;
+    transition: var(--transition);
+    box-shadow: var(--neumorphic-shadow);
+    border: none;
+    text-transform: uppercase;
+}
+
+.contact-button:hover, #music-toggle:hover {
+    box-shadow: var(--neumorphic-shadow-inset);
+    transform: translateY(1px);
+}
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--background);
+    color: var(--accent-color);
+    padding: 15px 25px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform: translateX(200%);
+    transition: var(--transition);
+    box-shadow: var(--neumorphic-shadow);
+    z-index: 1000;
+}
+
+.toast.show {
+    transform: translateX(0);
+}
+
+/* Canvas Styles */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+/* QRIS Specific Styles */
+.qris-image-container {
+    width: 100%;
+    padding: 10px;
+    background: var(--background);
+    border-radius: 15px;
+    box-shadow: var(--neumorphic-shadow);
+    margin: 15px 0;
+    transition: var(--transition);
+}
+
+.qris-image-container:hover {
+    transform: scale(1.02);
+}
+
+.qris-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .payment-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        padding: 15px 0;
+    }
+
+    .header h1 {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .payment-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        padding: 10px 0;
+    }
+
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .warning {
+        font-size: 1em;
+        padding: 12px;
+    }
+
+    .payment-method {
+        padding: 15px;
+    }
+
+    .contact-button, #music-toggle, .theme-toggle {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header Queen Elizabeth II of the United Kingdom
+
+    .header h1 {
+        font-size: 1.8em;
+    }
+
+    .payment-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .payment-info h3 {
+        font-size: 1.2em;
+    }
+
+    .payment-details p {
+        font-size: 1em;
+    }
+
+    .copy-btn {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+
+    .contact-title {
+        font-size: 1.4em;
+    }
+
+    .theme-toggle {
+        padding: 10px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body, .container, .payment-method, .header, .contact-section {
+        background: none;
+        color: #000;
+        box-shadow: none;
+    }
+
+    .copy-btn, .contact-button, #music-toggle, .theme-toggle {
+        display: none;
+    }
+}
