@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quotes Showcase</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="layout">
+    <figure class="frame">
+      <img src="quotes - 600 kb.jpeg" alt="Quote" width="516" height="925">
+    </figure>
+  </main>
+
+  <div id="musicDialog" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center px-4 hidden">
+    <div data-animate="card" class="relative w-full max-w-sm bg-[#0f0f12]/90 border border-white/10 rounded-2xl p-6 shadow-2xl text-white transition-all duration-300 opacity-0 translate-y-4 scale-95">
+      <div class="flex items-start gap-3">
+        <div class="h-10 w-10 flex items-center justify-center rounded-full bg-emerald-500/20 text-emerald-200">♪</div>
+        <div>
+          <h2 class="text-lg font-semibold leading-tight">Putar musik latar?</h2>
+          <p class="text-sm text-gray-200/80 mt-1">Izinkan musik diputar saat halaman dibuka.</p>
+        </div>
+      </div>
+      <div class="mt-6 flex gap-3 items-center relative">
+        <button id="btnYes" class="px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-semibold shadow-lg shadow-emerald-500/20 transition-transform duration-150 hover:-translate-y-0.5">
+          Ya, putar
+        </button>
+        <button id="btnNo" class="px-4 py-2 rounded-lg bg-gray-700 text-white font-semibold shadow-lg shadow-black/30 transition-transform duration-150">
+          Tidak
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="bgMusic" src="musikqoutes.mp3" preload="auto" loop playsinline></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
